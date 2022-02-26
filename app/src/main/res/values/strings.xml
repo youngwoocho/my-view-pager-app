@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">MyViewPagerApp</string>
     <string name="button_enter_viewpager">Enter ViewPager</string>
+    <string name="button_viewpager_next_screen">Next Page</string>
+    <string name="text_view_exit">You\'ve reached the end!!</string>
 </resources>
