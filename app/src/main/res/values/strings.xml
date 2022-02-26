@@ -3,4 +3,7 @@
     <string name="button_enter_viewpager">Enter ViewPager</string>
     <string name="button_viewpager_next_screen">Next Page</string>
     <string name="text_view_exit">You\'ve reached the end!!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview_indicator">I am Slide %1$d</string>
 </resources>
