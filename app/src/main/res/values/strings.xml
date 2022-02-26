@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyViewPagerApp</string>
+    <string name="button_enter_viewpager">Enter ViewPager</string>
 </resources>
