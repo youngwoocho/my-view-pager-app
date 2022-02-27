@@ -1,5 +1,6 @@
 package com.example.myviewpagerapp
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,7 @@ import com.example.myviewpagerapp.databinding.ActivityViewPagerBinding
 class ViewPagerActivity : AppCompatActivity() {
     private val viewBinding by viewBindingDelegate(ActivityViewPagerBinding::inflate)
 
-    private val viewPagerCallback = object : ViewPager2.OnPageChangeCallback(){
+    private val viewPagerCallback = object : ViewPager2.OnPageChangeCallback() {
         override fun onPageSelected(position: Int) {
             super.onPageSelected(position)
             updateProgressBar(position)
@@ -28,6 +29,8 @@ class ViewPagerActivity : AppCompatActivity() {
         viewBinding.viewpager.adapter = ScreenSlidePagerAdapter(this)
 
         viewBinding.viewpager.registerOnPageChangeCallback(viewPagerCallback)
+
+        setUpProgressBarAnimation()
     }
 
     override fun onDestroy() {
@@ -38,6 +41,10 @@ class ViewPagerActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         moveBackViewPager()
+    }
+
+    private fun setUpProgressBarAnimation() {
+
     }
 
     private fun moveBackViewPager() {
@@ -67,7 +74,11 @@ class ViewPagerActivity : AppCompatActivity() {
     }
 
     private fun updateProgressBar(itemPosition: Int) {
-        viewBinding.progressbar.progress = (itemPosition + 1) * 100 / NUM_PAGES
+        val updatedProgress = (itemPosition + 1) * 100 / NUM_PAGES
+        ObjectAnimator.ofInt(viewBinding.progressbar, "progress", updatedProgress).apply {
+            duration = 300
+            start()
+        }
     }
 
     companion object {
