@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ViewPagerActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar_view_pager"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <ProgressBar
         android:id="@+id/progressbar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -13,8 +21,8 @@
         android:layout_height="wrap_content"
         android:progressTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_view_pager"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"

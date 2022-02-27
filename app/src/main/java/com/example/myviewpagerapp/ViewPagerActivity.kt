@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myviewpagerapp.databinding.ActivityViewPagerBinding
 
@@ -26,11 +27,16 @@ class ViewPagerActivity : AppCompatActivity() {
             moveForwardViewPager()
         }
 
+        setSupportActionBar(viewBinding.toolBarViewPager)
+        viewBinding.toolBarViewPager.navigationIcon =
+            ContextCompat.getDrawable(this, R.drawable.back_arrow)
+        viewBinding.toolBarViewPager.setNavigationOnClickListener {
+            moveBackViewPager()
+        }
+
         viewBinding.viewpager.adapter = ScreenSlidePagerAdapter(this)
 
         viewBinding.viewpager.registerOnPageChangeCallback(viewPagerCallback)
-
-        setUpProgressBarAnimation()
     }
 
     override fun onDestroy() {
@@ -41,10 +47,6 @@ class ViewPagerActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         moveBackViewPager()
-    }
-
-    private fun setUpProgressBarAnimation() {
-
     }
 
     private fun moveBackViewPager() {

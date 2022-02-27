@@ -12,6 +12,8 @@ class EntryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
+        setSupportActionBar(viewBinding.toolBarEntry)
+
         viewBinding.buttonNextScreen.setOnClickListener {
             startActivity(Intent(this, ViewPagerActivity::class.java))
         }
