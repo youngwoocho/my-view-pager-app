@@ -8,11 +8,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar_view_pager"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:progressTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar_view_pager"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_view_pager" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"

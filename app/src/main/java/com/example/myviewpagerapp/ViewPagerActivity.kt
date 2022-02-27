@@ -78,7 +78,7 @@ class ViewPagerActivity : AppCompatActivity() {
     private fun updateProgressBar(itemPosition: Int) {
         val updatedProgress = (itemPosition + 1) * 100 / NUM_PAGES
         ObjectAnimator.ofInt(viewBinding.progressbar, "progress", updatedProgress).apply {
-            duration = 300
+            duration = ANIMATION_DURATION_IN_MILLIS
             start()
         }
     }
@@ -86,5 +86,6 @@ class ViewPagerActivity : AppCompatActivity() {
     companion object {
         const val NUM_PAGES = 3
         private const val TAG = "ViewPagerActivity"
+        private const val ANIMATION_DURATION_IN_MILLIS = 300L
     }
 }
