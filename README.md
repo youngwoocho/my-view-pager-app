@@ -16,5 +16,3 @@ A test application to learn about viewPager in Android framework
 - [x] Add sliding animation moving in either Entry or Exit Activity
 
 ## Demo
-
-![Demo Video](https://github.com/youngwoocho/my-view-pager-app/blob/main/20220301_viewpager_demo.mp4)
