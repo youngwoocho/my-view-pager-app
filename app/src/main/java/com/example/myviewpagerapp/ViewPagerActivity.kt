@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myviewpagerapp.databinding.ActivityViewPagerBinding
@@ -72,7 +73,14 @@ class ViewPagerActivity : AppCompatActivity() {
     }
 
     private fun goToExitActivity() {
-        startActivity(Intent(this, ExitActivity::class.java))
+        val animationBundle = ActivityOptionsCompat.makeCustomAnimation(
+            this,
+            R.anim.slide_in_right,
+            R.anim.slide_out_left
+        ).toBundle()
+        startActivity(
+            Intent(this, ExitActivity::class.java), animationBundle
+        )
     }
 
     private fun updateProgressBar(itemPosition: Int) {
